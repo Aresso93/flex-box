@@ -15,7 +15,6 @@ html, body {
     
     /* width: 600px; */
     flex-wrap: wrap;
-    gap: 18px;
 }
 
 .column-box{
@@ -33,7 +32,7 @@ html, body {
     /* flex-shrink: 1; */
     /*invece di usare grow a 1, shrink a 1 e basis a 0 separatamente, posso usare anche solo "flex"*/
     /* flex: 1; */
-    gap: 15px;
+    
 }
 
 .small{
