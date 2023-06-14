@@ -1,0 +1,81 @@
+html, body {
+    height: 100%;
+    margin:0px;
+    /*devo mettere 0px di margine per evitare il bordino di default*/
+    box-sizing: border-box;
+}
+
+/*nessun elemento ha un genitore con l'altezza, ma se definiamo quella di html, otteniamo un div grande come tutta la pagina*/
+.main-box{
+    border: 3px solid red;
+    height: 100%;
+    box-sizing: border-box;
+    /*visto che main-box è genitore, dandogli proprietà flex le prenderanno anche le column-box*/
+    display: flex;
+    
+    /* width: 600px; */
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.column-box{
+    border: 3px solid blue;
+    /* width: 100px; */
+    /*nuova unità di misura: le fr, ovvero fractions*/
+   /* flex-grow: 1;*/
+    /*1 = ogni elemento può avere una frazione del totale*/
+    display: flex;
+    flex-direction: column-reverse;
+    /* flex-basis: 0; */
+    /*la stringa sopra gli dice di non contare il contenuto che include nella distribuzione dello spazio*/
+    width: 300px;
+    /*min-width: 300px era al posto di width, ma l'ho commentato perché era troppo forte e forzava la width minima*/
+    /* flex-shrink: 1; */
+    /*invece di usare grow a 1, shrink a 1 e basis a 0 separatamente, posso usare anche solo "flex"*/
+    /* flex: 1; */
+    gap: 15px;
+}
+
+.small{
+    /* flex-grow: 1; */
+    flex: 1;
+}
+
+.big{
+    /* flex-grow: 2; */
+    flex: 2;
+}
+
+.box{
+    border: 3px solid green;
+    /* flex-basis: 0; */
+    /* flex: 1; */
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    /*justify content è per la direzione primaria (di default row), mentre align items è per la direzione secondaria, come delle coordinate*/
+    /*space between prende lo spazio in mezzo e lo distribuisce equamente, space around fa una cosa simile*/
+    gap: 8px;
+}
+
+.content{
+    width: 80px;
+    height: 80px;
+    background-color: crimson;
+    border: 1px solid yellow;
+}
+
+.order{
+    order: 5;
+}
+
+.medium-priority{
+    order: 5;
+}
+/*il numero in sé è irrilevante, ma quello che voglio per primo deve avere il numero più basso*/
+.low-priority{
+    order: 10;
+}
+
+/*se metto una * prima della graffa, il CSS che scrivo si applica a TUTTI i tag dell'HTML*/
